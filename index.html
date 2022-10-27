@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <div class="app">
-        <h4>Todo App</h4>
-        <div id="add-new">
-            <span>Add new Task</span>
-            <i class="fas fa-plus"></i>
-        </div>
-        <h5>Tasks</h5>
+      <h4>Todo App</h4>
+      <div id="add-new">
+        <span>Add new Task</span>
+        <i class="fas fa-plus"></i>
+      </div>
+      <h5>Tasks</h5>
 
+      <div id="tasks">
+        <div>
+          <span>Task 1</span>
+          <span>2022-10-27</span>
+          <p>Going to gym to watch netflix</p>
 
-        <div id="tasks">
-            
+          <span class="options">
+            <i class="fas fa-edit"></i>
+            <i class="fas fa-trash-alt"></i>
+          </span>
         </div>
+        
+        <div>
+          <span>Task 1</span>
+          <span>2022-10-27</span>
+          <p>Going to gym to watch netflix</p>
+
+          <span class="options">
+            <i class="fas fa-edit"></i>
+            <i class="fas fa-trash-alt"></i>
+          </span>
+        </div>
+      </div>
     </div>
-</body>
-<script src="./script.js"></script>
+  </body>
+  <script src="./script.js"></script>
 </html>
