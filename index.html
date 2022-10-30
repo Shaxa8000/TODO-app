@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,17 +18,17 @@
   </head>
   <body>
     <div class="app">
-      <h4>Todo App</h4>
+      <h4 class="mb-4">Todo App</h4>
       <div id="add-new">
         <span>Add new Task</span>
         <i class="fas fa-plus"></i>
       </div>
-      <h5>Tasks</h5>
+      <h5 class="text-center mt-3" >Tasks</h5>
 
       <div id="tasks">
         <div>
-          <span>Task 1</span>
-          <span>2022-10-27</span>
+          <span class="fw-bold">Task 1</span>
+          <span class="small text-secondary">2022-10-27</span>
           <p>Going to gym to watch netflix</p>
 
           <span class="options">
@@ -36,8 +38,8 @@
         </div>
         
         <div>
-          <span>Task 1</span>
-          <span>2022-10-27</span>
+          <span class="fw-bold">Task 2</span>
+          <span class="small text-secondary">2022-10-27</span>
           <p>Going to gym to watch netflix</p>
 
           <span class="options">
@@ -48,5 +50,6 @@
       </div>
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script.js"></script>
 </html>
