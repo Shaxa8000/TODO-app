@@ -11,7 +11,10 @@ body {
     padding: 15px;
     margin: 50px auto;
     background-color: #fff;
+    overflow-y: scroll;
 }
+
+.app::-webkit-scrollbar {width: 0 !important}
 
 #add-new {
     background: rgba(171, 206, 161, 0.35);
@@ -54,3 +57,6 @@ body {
     cursor: pointer;
 }
 
+#msg {
+    color: red;
+}
