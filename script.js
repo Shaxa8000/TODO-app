@@ -45,13 +45,17 @@ let createTasks = () => {
           <p>${data.description}</p>
 
           <span class="options">
-            <i class="fas fa-edit"></i>
-            <i class="fas fa-trash-alt"></i>
+            <i data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+            <i onclick='deleteTask(this)' class="fas fa-trash-alt"></i>
           </span>
         </div>
   `
 
   resetForm();
+}
+
+let deleteTask = (e) => {
+   e.parentElement.parentElement.remove();
 }
 
 let resetForm = () => {
