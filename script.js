@@ -9,7 +9,6 @@ let add = document.getElementById('add');
 form.addEventListener('submit', (e)=> {
    e.preventDefault();
    formValidation()
-
 })
 
 let formValidation = () =>{
@@ -27,42 +26,69 @@ let formValidation = () =>{
     }
 }
 
-let data = {};
+let data = [];
 
 let acceptData = () => {
-   data['text'] = textInput.value;
-   data['dateInput'] = dateInput.value;
-   data['description'] = textArea.value;
+   data.push({
+     text : textInput.value,
+     dateInput : dateInput.value,
+     description : textArea.value,
+   })
 
+   localStorage.setItem("data", JSON.stringify(data));
    createTasks()
 }
 
 let createTasks = () => {
-  tasks.innerHTML += `
-   <div>
-          <span class="fw-bold">${data.text}</span>
-          <span class="small text-secondary">${data.dateInput}</span>
-          <p>${data.description}</p>
+   tasks.innerHTML = '';
 
+
+  data.map((x, y) => {
+    return (tasks.innerHTML += `
+    <div id=${y}>
+          <span class="fw-bold">${x.text}</span>
+          <span class="small text-secondary">${x.date}</span>
+          <p>${x.description}</p>
+  
           <span class="options">
-            <i data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
-            <i onclick='deleteTask(this)' class="fas fa-trash-alt"></i>
+            <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+            <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
           </span>
         </div>
-  `
+    `);
+  });
 
   resetForm();
-}
+};
+
 
 let deleteTask = (e) => {
    e.parentElement.parentElement.remove();
 }
 
+let editTask = (e) => {
+   let selectedTask = e.parentElement.parentElement;
+
+   textInput.value = selectedTask.children[0].innerHTML;
+   dateInput.value = selectedTask.children[1].innerHTML;
+   textArea.value = selectedTask.children[2].innerHTML;
+
+   selectedTask.remove();
+}
+
 let resetForm = () => {
+
    textInput.value = '';
    dateInput.value = '';
    textArea.value = '';
+
 }
+
+(()=>{
+   data = JSON.parse(localStorage.getItem("data"));
+   createTasks()
+   console.log(data);
+})()
 
 
 
