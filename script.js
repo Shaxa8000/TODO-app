@@ -64,6 +64,9 @@ let createTasks = () => {
 
 let deleteTask = (e) => {
    e.parentElement.parentElement.remove();
+   data.splice(e.parentElement.parentElement.id, 1);
+   localStorage.setItem("data", JSON.stringify(data));
+   console.log(e.parentElement.parentElement.id);
 }
 
 let editTask = (e) => {
@@ -73,7 +76,7 @@ let editTask = (e) => {
    dateInput.value = selectedTask.children[1].innerHTML;
    textArea.value = selectedTask.children[2].innerHTML;
 
-   selectedTask.remove();
+   deleteTask(e)
 }
 
 let resetForm = () => {
@@ -85,7 +88,7 @@ let resetForm = () => {
 }
 
 (()=>{
-   data = JSON.parse(localStorage.getItem("data"));
+   data = JSON.parse(localStorage.getItem("data")) || [];
    createTasks()
    console.log(data);
 })()
